@@ -1,0 +1,33 @@
+section.footer-reach-container
+  .container
+    +standardSectionHeader("Reach Us")
+    .row
+      .col-lg-4.col-md-4.col-sm-8.col-10.py-4.m-auto
+        .social-container
+          - var socials = data.social
+          each social in socials
+            span.social-icon
+              a.cx-tooltip(href=`${social.url}` data-tooltip=`${social.name}` target="_blank" rel="noopener noreferrer")
+                img(src=`${social.icon}` alt=`${social.name}` loading="lazy")
+    .row
+      .col-12.pb-4.mx-auto
+        .contact-content.text-center
+          +getIcon("cx-mail", "d-inline-block contact-title")
+          a.d-inline.ml-5.px-2(href=`mailto:${data.footerInfo.contact.email}` target="_blank" rel="noopener noreferrer")
+            | #{data.footerInfo.contact.email}
+          //- div.d-sm-inline.px-2.spacer
+          //- +getIcon("cx-phone", "d-inline-block contact-title")
+          //- a.d-inline.px-2(href=`tel:${data.footerInfo.contact.phone}` target="_blank" rel="noopener noreferrer")
+          //-   | #{data.footerInfo.contact.phone}
+    .row.copy-right.col-lg-8.col-12.mx-auto
+      div
+        .copyright-content.d-flex.justify-content-center
+          span.copyright-text !{data.footerInfo.copyRight}
+          - var links = data.footerInfo.links
+          ul.u-list-inline.legal-links
+            each link, index in links
+              li.list-inline-item.footer-bottom-link
+                a(href=`${link.url}`) #{link.title}
+              if index === 0
+                li.list-inline-item.footer-bottom-link
+                  span |

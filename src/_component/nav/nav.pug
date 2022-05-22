@@ -1,0 +1,24 @@
+nav.navbar.navbar-expand-lg.navbar-dark#primarySiteNav
+  div.container
+    a.navbar-brand.logo-image(href="/index.html")
+      img(src=`${data.site.logo}` alt=`${data.site.title} Logo`)
+    button.navbar-toggler.p-0.border-0#navbarSideCollapse(aria-label="Hamburger Menu")
+      span.navbar-toggler-icon
+    div.navbar-collapse.offcanvas-collapse#primarySiteNavDefault
+      ul.navbar-nav.ms-auto.navbar-nav-scroll
+        li.nav-item.d-none
+          a.nav-link(href="#home")
+        li.nav-item
+          a.nav-link(href="about.html") About Us
+        li.nav-item.dropdown
+          a.nav-link.dropdown-toggle#dropdown01(href="#" data-bs-toggle="dropdown" aria-expanded="false") Teams
+          - var teams = data.teams
+          ul.dropdown-menu
+            each team, index in teams
+              li
+                a.dropdown-item(href=`${team.url}`) #{team.name}
+              if teams.length-1 > index
+                li
+                  div.dropdown-divider
+        li.nav-item 
+          a.nav-link(href="contact-us.html") Contact Us

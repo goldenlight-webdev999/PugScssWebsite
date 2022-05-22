@@ -1,0 +1,13 @@
+section.not-found-container
+  div.container
+    div.row.mt-4
+      div.col-lg-8.m-auto
+          h5.mb-3 #{error.title}
+          h1.text-capitalize.pb-5.not-found-title
+            span #{error.subtitle}
+          div.back-to-home
+            a(href=`${data.links.goBackHome.link}`)
+              span.btn.btn-back-to-home.px-4.py-3
+                span.d-flex.align-items-center.justify-content-center
+                  span #{data.links.goBackHome.text}
+                  +getIcon("cx-arrow-right", "arrow_right_alt")

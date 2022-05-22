@@ -1,0 +1,67 @@
+mixin card(name, image, homestate, rank, age, baiRankGroup, ranks)
+  div.card
+    div.card-wraper
+      div.avatar
+        img.avatar-img(src= image alt=`Avatar of ${name}` loading="lazy")
+      div.card-wraper-inner
+        div.card-top
+          +getIcon("cx-arrow-up", "arrow up")
+          +getIcon("cx-arrow-down", "arrow down")
+          div.info.py-4
+            div.name
+              h5= name
+            div.role
+              p= homestate
+        div.card-bottom
+          div.card-bottom-top.justify-content-around.pb-4
+            div.left
+              div.number= age
+              div.desc Age
+            div.right
+              div.number= rank
+              div.desc Sate Rank
+          div.card-bottom-bottom
+            div.row.d-flex.justify-content-center
+              span.number= `BAI Rank ${baiRankGroup ? '('+baiRankGroup+')' : ""}`
+            div.row.d-flex.justify-content-around.px-3.py-3
+              each val, index in ranks
+                div.col
+                  div.number= val.rank
+                  div.desc= val.category
+              else 
+                div.col
+                  div.number NA
+
+// Desktop
+section.players-container.d-none.d-lg-block
+  div.container
+    +standardSectionHeader(players.heading)
+    - var n = 0;
+    - var cards = players.items;
+    if cards && cards.length > 1
+      div.players-carousel.slick-themed
+        while n < cards.length
+          div.block
+            +card(cards[n].name, cards[n].image, cards[n].homestate, cards[n].rank, cards[n].age, cards[n].baiRankGroup, cards[n].ranks)
+            if n < cards.length - 1
+              +card(cards[n+1].name, cards[n+1].image, cards[n+1].homestate, cards[n+1].rank, cards[n+1].age, cards[n+1].baiRankGroup, cards[n+1].ranks)
+          - n=n+2;
+    else
+      div.no-items
+        div.text-center Season 1 commences on May 2022
+
+// Mobile
+section.players-container.d-lg-none
+  div.container
+    +standardSectionHeader(players.heading)
+    - var n = 0;
+    - var cards = players.items;
+    if cards && cards.length > 1
+      div.players-carousel.slick-themed
+        while n < cards.length
+          div.block
+            +card(cards[n].name, cards[n].image, cards[n].homestate, cards[n].rank, cards[n].age, cards[n].baiRankGroup, cards[n].ranks)
+          - n=n+1;
+    else
+      div.no-items
+        div.text-center Season 1 commences on May 2022

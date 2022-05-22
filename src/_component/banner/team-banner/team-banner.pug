@@ -1,0 +1,22 @@
+section.team-banner.banner-primary
+  .team-banner-wrapper.container.text-center
+    //- h1.banner-title #{team.name}
+    .banner-content-inner
+      //- div.banner-content-inner-left
+      //-   div.banner-text
+      //-     div.banner-text-item
+      //-       span.item-name Owner:
+      //-       span.item-content #{team.owner}
+      //-     div.banner-text-item
+      //-       span.item-name Venue:
+      //-       span.item-content #{team.venue}
+      
+      //- .banner-content-inner-right
+      //-   .banner-image
+      //-     img(src=`${team.logo}` alt=`${team.name} Banner`)
+      
+      .banner-content-inner-center
+        .banner-image.mb-5
+          img(src=`${team.logo}` alt=`${team.name} Banner`)
+    .banner-btn
+      a.btn(href=`${data.links.interestToOwnTeam.link}` target="_blank" rel="noopener noreferrer") #{data.links.interestToOwnTeam.text}

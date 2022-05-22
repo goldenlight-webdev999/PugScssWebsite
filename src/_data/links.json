@@ -1,0 +1,22 @@
+{
+  "playerRegister": {
+    "text": "Player Registration",
+    "link": "https://forms.gle/SUYGPy877agcHxBs6"
+  },
+  "interestToOwnTeam": {
+    "text": "Interested in Owning This Team",
+    "link": "https://forms.gle/Dfg8j8F3RLnD46WH6"
+  },
+  "ownATeam": {
+    "text": "Own A Team",
+    "link": "https://forms.gle/Dfg8j8F3RLnD46WH6"
+  },
+  "goBackHome": {
+    "text": "Go Back To Home",
+    "link": "/index.html"
+  },
+  "twitterEmbed": {
+    "text": "Twitter Widget Embed URL",
+    "link": "https://twitter.com/badmintongpl?ref_src=twsrc%5Etfw"
+  }
+}

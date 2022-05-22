@@ -1,0 +1,16 @@
+.contact-container {
+  @include themeBG();
+  padding: 60px 0;
+
+  h2 {
+    color: $text-head-primary;
+  }
+
+  .btn {
+    @include themeBtn($text-primary, $bg-blue, $text-inverse);
+  }
+
+  .content-map {
+    border-radius: 5px;
+  }
+}

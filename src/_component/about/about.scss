@@ -1,0 +1,12 @@
+.about-container {
+  @include themeBG();
+  padding: 60px 0;
+
+  h2 {
+    color: $text-head-primary;
+  }
+
+  .about-inner-wrapper {
+    padding-top: 50px;
+  }
+}

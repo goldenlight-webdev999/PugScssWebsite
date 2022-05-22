@@ -1,0 +1,14 @@
+extends _component/layout/base
+
+block nav-content
+  +standardPageHeader()
+
+block main-content
+  - var homeBanner = { title1: "Grand Prix ", title2: "Badminton League", subtitle: data.site.subtitle, bannerImage: `asset/image/bg/trophy.png` };
+  include _component/banner/home-banner/home-banner
+  include _component/bsl/bsl
+  +standardSectionGallery("Gallery", data.gallery, "landing-main-gallery")
+  include _component/social-media/social-media
+
+block long-footer
+  +standardPageFooter()

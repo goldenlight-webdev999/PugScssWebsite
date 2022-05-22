@@ -1,0 +1,11 @@
+section.teams-container
+  div.container
+    div.row.teams-carousel
+      - var teams = data.teams
+      each team, index in teams
+        div.col-12.col-sm-6.col-md-3.col-lg.py-2.team
+            a.team-link(href=`${team.url}`)
+              div.team-logo
+                img(src=`${team.logo}` alt=`${team.name} Logo`)
+              //- div.team-name
+              //-   p #{team.name}

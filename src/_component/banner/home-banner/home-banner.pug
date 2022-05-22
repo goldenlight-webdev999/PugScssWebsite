@@ -1,0 +1,22 @@
+section.home-banner.banner-primary
+  .container.mb-5.home-banner-wrapper
+    h1.d-lg-none.mb-5.banner-title
+      span.first #{homeBanner.title1}
+      span.second #{homeBanner.title2}
+    .row.flex-lg-row.flex-column-reverse.banner-content-inner
+      .col-lg-9.col-12.banner-content-inner-left
+        h1.d-none.d-lg-block.banner-title
+          span.first #{homeBanner.title1}
+          .spacer.d-none.d-md-block.d-xxl-none
+          span.second #{homeBanner.title2}
+        h3.banner-text #{homeBanner.subtitle}
+        .d-flex.flex-md-row.flex-column.justify-content-center.justify-content-lg-start.btn-wrapper
+          .banner-btn.mb-4.me-0.me-md-4
+            a.btn(href=`${data.links.ownATeam.link}` target="_blank" rel="noopener noreferrer") #{data.links.ownATeam.text}
+          .banner-btn
+            a.btn.secondary(href=`${data.links.playerRegister.link}` target="_blank" rel="noopener noreferrer") #{data.links.playerRegister.text}      
+      .col-lg-3.col-12.banner-content-inner-right
+        .banner-img
+          img(src=`${homeBanner.bannerImage}` alt="Banner Image")
+        .banner-img-caption.text-center Season 01
+  include ../../teams/teams

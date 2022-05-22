@@ -1,0 +1,32 @@
+[
+  {
+    "name": "PlayBaddy",
+    "slug": "playbaddy",
+    "url": "https://playbaddy.com/",
+    "logo": "asset/image/partners/playbaddy.png"
+  },
+  {
+    "name": "PBL",
+    "slug": "pbl",
+    "url": "https://www.pbl-india.com/",
+    "logo": "asset/image/partners/pbl.png"
+  },
+  {
+    "name": "BitSport",
+    "slug": "bitsport",
+    "url": "https://onbitsport.com/",
+    "logo": "asset/image/partners/bitsport.png"
+  },
+  {
+    "name": "LevelUp",
+    "slug": "levelup",
+    "url": "https://levelupzone.in/",
+    "logo": "asset/image/partners/levelup.png"
+  },
+  {
+    "name": "CryptoCricketers",
+    "slug": "cryptoCricketers",
+    "url": "https://cryptocricketers.com/",
+    "logo": "asset/image/partners/cryptocricketers.png"
+  }
+]

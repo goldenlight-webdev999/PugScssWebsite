@@ -1,0 +1,78 @@
+.team-banner {
+  background-color: $bg-primary;
+  padding: 100px 0;
+
+  &-wrapper {
+    width: 80%;
+    margin: 0 auto;
+
+    .banner-title {
+      font-style: italic;
+      text-align: center;
+      text-transform: uppercase;
+      color: $text-blue;
+
+      @include respond-to('medium') {
+        text-align: left;
+      }
+    }
+
+    .banner-content-inner {
+      display: flex;
+      flex-direction: column-reverse;
+      // justify-content: space-between;
+      justify-content: center;
+      align-items: center;
+
+      @include respond-to('medium') {
+        flex-direction: row;
+      }
+
+      &-left {
+        .banner-text {
+          padding: 50px 0;
+
+          &-item {
+            margin: 8px 0;
+
+            .item-name {
+              font-size: $fs-large;
+              line-height: 27px;
+              color: $text-primary-light;
+              margin-right: 48px;
+            }
+
+            .item-content {
+              font-size: $fs-large;
+              line-height: 27px;
+              color: $text-primary;
+            }
+          }
+        }
+      }
+
+      // &-right {
+      //   .banner-image {
+      //     img {}
+      //   }
+      // }
+      .banner-image {
+        img {
+          max-height: 500px;
+        }
+      }
+    }
+
+    .banner-btn {
+      // text-align: center;
+
+      // @include respond-to('medium') {
+      //   text-align: left;
+      // }
+
+      .btn {
+        @include themeBtn($text-primary, $bg-red, $text-inverse);
+      }
+    }
+  }
+}

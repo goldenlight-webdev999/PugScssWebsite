@@ -1,0 +1,21 @@
+section.contact-container
+  .container.contact-container-wrapper
+    +standardSectionHeader("Contact Us")
+    .contact-content-inner.row.flex-md-row.flex-column.pt-5
+      .contact-content-inner-right.col-md-6.col-12.mb-5
+        a(href=`${data.footerInfo.contact.address.map}` target="_blank" rel="noopener noreferrer")
+          img.content-map(src="asset/image/address-map.png" alt="Address Map")
+      .contact-content-inner-left.col-md-6.col-12
+        address
+          p.mb-0 #{data.footerInfo.contact.address.address1}
+          p.mb-0 #{data.footerInfo.contact.address.locality}
+          p #{data.footerInfo.contact.address.city}
+          p
+            span Email: 
+            a(href=`mailto:${data.footerInfo.contact.address.email}` target="_blank" rel="noopener noreferrer")
+              | #{data.footerInfo.contact.address.email}
+          //- p
+          //-   span Phone: 
+          //-   a(href=`tel:${data.footerInfo.contact.address.phone}` target="_blank" rel="noopener noreferrer")
+          //-     | #{data.footerInfo.contact.address.phone}
+          a.btn.mt-2(href=`${data.footerInfo.contact.address.map}` target="_blank" rel="noopener noreferrer") Click to locate us

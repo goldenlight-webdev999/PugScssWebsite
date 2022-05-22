@@ -1,0 +1,11 @@
+extends _component/layout/base
+
+block nav-content
+  +standardPageHeader()
+
+block main-content
+  - var error = { title: "404 Not Found", subtitle: "It's Out of Bounds!" };
+  include _component/not-found/not-found
+
+block long-footer
+  +standardPageFooter()

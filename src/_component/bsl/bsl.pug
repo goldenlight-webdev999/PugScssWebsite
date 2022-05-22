@@ -1,0 +1,18 @@
+section.bsl-container
+  div.container
+    div.d-flex.align-items-start.bsl-inner-wrapper.row
+      - formats = data.bsl
+      div.nav.flex-row.flex-lg-column.nav-pills.formats-panel.col-12.col-lg-3#v-pills-tab(role="tablist")
+        each format, index in formats
+          button(class=(index===0)?"nav-link active":"nav-link" id=`v-pills-${format.slug}-tab` 
+            data-bs-toggle="pill" data-bs-target=`#v-pills-${format.slug}` type="button" role="tab" 
+            aria-controls=`v-pills-${format.slug}` aria-selected="true")
+              div.inner-text #{format.tab}
+      div.tab-content.formats-content.col-12.col-lg-9#v-pills-tabContent
+        each format, index in formats
+          div(class=(index===0)?"tab-pane fade show active":"tab-pane fade" id=`v-pills-${format.slug}` 
+            role="tabpanel" aria-labelledby=`v-pills-${format.slug}-tab`)
+            +standardSectionHeader(format.title, "format-title")
+            div.format-content.readMore !{format.description}
+            span.more.read-btn Read more
+            span.less.read-btn Read less

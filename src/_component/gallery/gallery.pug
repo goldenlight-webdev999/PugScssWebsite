@@ -1,0 +1,90 @@
+//- Big Item
+mixin itemBig(asset, type, caption, date)
+  div.item-1.item-wrapper(data-fancybox="gallery"
+                          data-caption=caption
+                          data-typex=type
+                          data-date=date
+                          data-src=`${asset}`)
+    +getIcon("cx-multimedia", "asset-icon")
+    div.item-asset
+      img(src=asset alt="Gallery Image" loading="lazy")
+    div.item-text-wrapper.d-flex.p-0
+      div.item-infos
+        div.item-type= type
+        div.item-date= date
+      div.item-caption= caption
+
+//- Small Item
+mixin itemSmall(asset, type, caption, date)
+  div.item-2.item-wrapper.row(data-fancybox="gallery"
+                              data-caption=caption
+                              data-typex=type
+                              data-date=date
+                              data-src=`${asset}`)
+    +getIcon("cx-multimedia", "asset-icon")
+    div.d-flex.p-0
+      div.item-asset.col-6
+        img(src=asset alt="Gallery Image" loading="lazy")
+      div.item-text-wrapper.col-6
+        div.item-infos
+          div.item-type= type
+          div.item-date= date
+        div.item-caption= caption
+
+section.gallery-container.d-none.d-lg-block
+  div.container
+    +standardSectionHeader(gallery.heading)
+    - var items = gallery.items
+    - var n = 0;
+    if items && items.length > 1
+      div.row.gallery-carousel.slick-themed
+        while n < items.length
+          div.block.row
+            div.row.mb-2.m-0
+              div.col-6.px-1
+                div.first-wrapper.quarter-inner-wrapper
+                  if items[n]
+                    +itemBig(items[n].asset, items[n].type, items[n].caption, items[n].date)                
+              div.col-6.px-1
+                div.third-wrapper.quarter-inner-wrapper
+                  if items[n+3]
+                    div.mb-2
+                      +itemSmall(items[n+3].asset, items[n+3].type, items[n+3].caption, items[n+3].date)
+                  if items[n+4]
+                    +itemSmall(items[n+4].asset, items[n+4].type, items[n+4].caption, items[n+4].date)                
+            div.row.m-0
+              div.col-6.px-1
+                div.second-wrapper.quarter-inner-wrapper
+                  if items[n+1]
+                    div.mb-2
+                      +itemSmall(items[n+1].asset, items[n+1].type, items[n+1].caption, items[n+1].date)
+                  if items[n+2]
+                    +itemSmall(items[n+2].asset, items[n+2].type, items[n+2].caption, items[n+2].date)
+              div.col-6.px-1
+                div.firth-wrapper.quarter-inner-wrapper
+                  if items[n+5]
+                    +itemBig(items[n+5].asset, items[n+5].type, items[n+5].caption, items[n+5].date)
+          - n=n+6;
+    else
+      div.row 
+        div.text-center Season 1 commences on May 2022
+
+//- For Mobile
+section.gallery-container.d-lg-none.px-3
+  div.container
+    +standardSectionHeader(gallery.heading)
+    - var items = gallery.items
+    - var n = 0;
+    if items && items.length > 1      
+      div.row.gallery-carousel.slick-themed
+        while n < items.length
+          div.block.row
+            div.row.mb-2.m-0
+              div.col-12.px-1
+                div.first-wrapper.quarter-inner-wrapper
+                  if items[n]
+                    +itemBig(items[n].asset, items[n].type, items[n].caption, items[n].date)
+          - n=n+1;
+    else
+      div.row
+        div.text-center Season 1 commences on May 2022

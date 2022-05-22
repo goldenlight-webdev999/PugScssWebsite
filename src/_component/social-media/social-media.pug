@@ -1,0 +1,11 @@
+section.social-media-container
+  div.container
+    +standardSectionHeader("Social Media")
+    div.row.d-flex.align-items-stretch.widget-inner-wrapper
+      .widget-timeline-wrapper
+        div.widget
+          h5.widget-header Twitter
+          a.widget(class="twitter-timeline" data-height="500" data-chrome="noheader nofooter noborders" href=`${data.links.twitterEmbed.link}`) Loading Twitter Feed...
+      .widget-timeline-wrapper
+        div.widget(class="embedsocial-hashtag" data-ref="f4eff4f96f91f258e2a9872997cd0d5a071a15a1")
+          h5.widget-header Instagram

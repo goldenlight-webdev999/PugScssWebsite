@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Facebook",
+    "url": "https://www.facebook.com/Grand-Prix-Badminton-League-107071345139316",
+    "icon": "asset/image/social/facebook.png"
+  },
+  {
+    "name": "Twitter",
+    "url": "https://twitter.com/badmintongpl/",
+    "icon": "asset/image/social/twitter.png"
+  },
+  {
+    "name": "Instagram",
+    "url": "https://www.instagram.com/badmintongpl/",
+    "icon": "asset/image/social/instagram.png"
+  }
+]

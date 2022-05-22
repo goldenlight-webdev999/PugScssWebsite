@@ -1,0 +1,45 @@
+.partners-container {
+  background-color: $bg-secondary;
+  padding: 60px 0;
+  box-shadow: inset $shadow-dark-3;
+
+  h2 {
+    color: $text-head-primary;
+  }
+
+  .partners {
+    .partner-card {
+      margin: 1em auto;
+      margin-bottom: 0;
+
+      .inner-wrapper {
+        background-color: $bg-primary;
+        border: 3px solid $border-primary;
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .inner-wrapper {
+        .avatar {
+          &.playbaddy {
+            padding: 10px;
+          }
+
+          &.bitsport {
+            padding: 5px;
+          }
+
+          &.bsl {
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}

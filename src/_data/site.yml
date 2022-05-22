@@ -1,0 +1,22 @@
+# Site Meta
+title: "Grand Prix Badminton League"
+subtitle: "Join Karnataka's Biggest Badminton Extravaganza"
+charset: "UTF-8"
+contentType: "text/html;charset=UTF-8"
+viewport: "width=device-width, initial-scale=1, shrink-to-fit=no"
+
+applicationName: "Grand Prix Badminton League"
+description: "Join Karnataka's Biggest Badminton Extravaganza"
+keywords: "badminton league, kbl, india"
+
+ogUrl: "/"
+ogType: "website"
+ogTitle: "Grand Prix Badminton League"
+ogDescription: "Join Karnataka's Biggest Badminton Extravaganza"
+ogImage: "asset/image/logo.png"
+
+# Site Data
+logo: "asset/image/logo.png"
+logoShort: "asset/image/logo-short.png"
+gtag: "G-43TK6L2Y63"
+fbAppId: "430885811751056"

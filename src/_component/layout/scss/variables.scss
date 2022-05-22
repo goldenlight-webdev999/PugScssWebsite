@@ -1,0 +1,75 @@
+// Variables
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-red: red;
+$color-vermillion: #ff4400;
+$color-red-berry: #8A0303;
+$color-buttercup: #F4BE19;
+$color-orange: orange;
+$color-red-dasmask: #DF7C3B;
+$color-cerulean: #00AEEF;
+$color-dodger-blue: #229DFF;
+$color-mariner: #2E82C4;
+$color-haiti: #131038;
+$color-cod-grey: #131313;
+$color-cod-grey-light: #13131366;
+$color-mine-shaft-grey: #272727;
+$color-shark-grey: #1D1D21;
+$color-outer-space: #292F33;
+// $color-woodsmoke: #15181C;
+$color-ship-grey: #44434A;
+$color-heather: #91A5B499;
+$color-silver: #CBCBCB;
+$color-alabaster: #FAFAFA;
+
+$bg-primary: $color-black;
+$bg-secondary: $color-cod-grey;
+$bg-secondary-light: $color-cod-grey-light;
+$bg-tertiary: $color-haiti;
+$bg-blue: $color-mariner;
+$bg-red: $color-red-berry;
+$bg-inverse: $color-white;
+$bg-twitter-widget: $color-outer-space;
+$bg-ig-widget: $color-alabaster;
+
+$text-primary: $color-white;
+$text-primary-light: $color-silver;
+$text-secondary: $color-buttercup;
+$text-head-primary: $color-red-dasmask;
+$text-head-secondary: $color-cerulean;
+$text-blue: $color-dodger-blue;
+$text-red: $color-red;
+$text-inverse: $color-black;
+$text-link: $color-buttercup;
+$text-link-hover: $color-red-dasmask;
+$text-grey: $color-heather;
+$text-neon: $color-vermillion;
+
+$border-primary: $color-cerulean;
+$border-grey: $color-mine-shaft-grey;
+$border-twitter-widget: $color-heather;
+
+$slick-dot-color: $text-primary;
+$slick-dot-color-active: $color-orange;
+$slick-arrow-color: $text-primary;
+
+$shadow-dark-1: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+$shadow-dark-2: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+$shadow-dark-3: 0 0 10px #000000;
+
+$font-primary: 'IBM Plex Sans', sans-serif;
+$font-secondary: 'Exo 2', 'IBM Plex Sans', sans-serif;
+
+$fs-small: 0.75rem;
+$fs-medium: 0.9rem;
+$fs-regular: 1rem;
+$fs-large: 1.15rem;
+
+$zi-hidden: -99;
+$zi-hidden-less: -9;
+$zi-regular: 0;
+$zi-regular-med: 1;
+$zi-regular-high: 9;
+$zi-above-regular: 49;
+$zi-popups: 99;
+$zi-nav: 999;

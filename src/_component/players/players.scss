@@ -1,0 +1,167 @@
+.players-container {
+  @include themeBG($bg-primary);
+  padding: 60px 0;
+
+  h2 {
+    color: $text-head-primary;
+  }
+
+  .players-carousel {
+    width: 90%;
+    margin: 0px auto;
+    margin-top: 40px;
+
+    @include respond-to('medium') {
+      width: 80%;
+    }
+
+    @include respond-to('large') {
+      width: 90%;
+    }
+
+    .block {
+      .card {
+        color: $text-primary-light;
+        background-color: $bg-primary;
+        border: none;
+        box-shadow: $shadow-dark-1;
+        border-radius: 5px;
+        overflow: hidden;
+        max-width: 260px;
+        text-align: center;
+        text-transform: capitalize;
+        margin: 30px auto;
+
+        &-wraper {
+          display: flex;
+          flex-flow: column;
+          justify-content: space-between;
+          height: 292px;
+          position: relative;
+
+          .avatar {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+
+            .avatar-img {
+              object-fit: cover;
+            }
+          }
+
+          &-inner {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+
+            &.expand {
+              .card-top {
+                .arrow {
+                  &.up {
+                    display: none;
+                  }
+
+                  &.down {
+                    display: block;
+                  }
+                }
+              }
+
+              .card-bottom {
+                transition: max-height 1s ease-in-out;
+                max-height: 300px;
+              }
+            }
+
+            .card-top {
+              position: relative;
+
+              .arrow {
+                position: absolute;
+                right: 15px;
+                bottom: calc(50% - 13px);
+                cursor: pointer;
+
+                &.up {
+                  display: block;
+                }
+
+                &.down {
+                  display: none;
+                }
+              }
+
+              .info {
+                .name {
+                  h5 {
+                    font-weight: bold;
+                    font-size: $fs-regular;
+                    line-height: 21px;
+                    text-align: center;
+                    text-transform: capitalize;
+                    color: $text-primary;
+                    margin-bottom: 0;
+                  }
+                }
+
+                .role {
+                  font-weight: 500;
+                  font-size: $fs-medium;
+                  line-height: $fs-large;
+                  text-align: center;
+                  text-transform: capitalize;
+                  color: $text-primary;
+
+                  p {
+                    margin: 0;
+                  }
+                }
+              }
+            }
+
+            .card-bottom {
+              max-height: 0;
+              transition: max-height 0.25s ease-in-out;
+              &-top {
+                display: flex;
+                justify-content: center;
+              }
+
+              .number {
+                font-weight: bold;
+                font-size: $fs-regular;
+                line-height: 21px;
+                text-align: center;
+                text-transform: capitalize;
+                color: $text-primary-light;
+              }
+
+              .desc {
+                font-weight: normal;
+                font-size: $fs-small;
+                line-height: $fs-regular;
+                text-align: center;
+                text-transform: capitalize;
+                color: $text-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .slick-slide {
+      margin: 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .no-items {
+    padding-top: 30px;
+  }
+}

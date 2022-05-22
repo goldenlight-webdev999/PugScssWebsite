@@ -1,0 +1,23 @@
+{
+  "copyRight": "2021 &copy; All Rights Reserved.",
+  "links": [
+    {
+      "title": "Privacy Policy",
+      "url": "/privacy-policy.html"
+    },
+    {
+      "title": "Terms of Use",
+      "url": "/terms-of-use.html"
+    }
+  ],
+  "contact": {
+    "email": "gpbl@levelupzone.in",
+    "address": {
+      "address1": "No. 25/1A, Halanayakanahalli,",
+      "locality": "Off Sarjapura Road, Near Wipro Office,",
+      "city": "Bengaluru, Karnataka, India",
+      "email": "gpbl@levelupzone.in",
+      "map": "https://g.page/levelupzone?share"
+    }
+  }
+}

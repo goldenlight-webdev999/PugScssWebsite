@@ -1,0 +1,11 @@
+section.partners-container
+  div.container
+    +standardSectionHeader("Official Partners")
+    div.partners.row.col-lg-8.col-md-10.col-sm-12.pt-4.mx-auto.mt-4.text-center
+      - var partners = data.partners
+      each partner in partners
+        div.partner-card.col-sm-2.col-4
+          a.cx-tooltip(href=`${partner.url}` data-tooltip=`${partner.name}` target="_blank" rel="noopener noreferrer")
+            div.inner-wrapper.text-center
+              div(class=`avatar ${partner.slug}`)
+                img(src=`${partner.logo}` alt=`${partner.name}` loading="lazy")

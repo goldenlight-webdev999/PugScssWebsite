@@ -1,0 +1,12 @@
+.terms-container {
+  @include themeBG();
+  padding: 60px 0;
+
+  h2 {
+    color: $text-head-primary;
+  }
+
+  .terms-inner-wrapper {
+    padding-top: 50px;
+  }
+}

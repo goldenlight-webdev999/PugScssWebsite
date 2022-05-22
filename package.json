@@ -1,0 +1,157 @@
+{
+  "name": "gpbl-website",
+  "version": "1.1.0",
+  "description": "Join Karnataka's Biggest Badminton Extravaganza",
+  "main": "index.js",
+  "scripts": {
+    "install:normal": "npm i --ignore-scripts",
+    "postinstall": "npm shrinkwrap",
+    "build": "npm run build:dev",
+    "build:dev": "gulp build-dev --development --lang=en",
+    "build:prod": "gulp build-prod --production --lang=en",
+    "build:prod-ro": "gulp build-prod --production --lang=ro",
+    "start": "npm run start:dev",
+    "start:dev": "gulp exec-dev --development --lang=en",
+    "start:prod": "gulp exec-prod --production --lang=en",
+    "deploy": "gulp build-prod --production --lang=en && gulp deploy --production && gulp clean:ghpages --production",
+    "release": "standard-version",
+    "update": "git pull && npm run prod",
+    "test": "jest",
+    "reset-git": "echo \"Reset Git\" && rm -rf .git && git init && git add . && git commit -m \"Clean git repo\""
+  },
+  "//": "CUSTOM CONFIGURATION",
+  "installConfig": {
+    "pnp": false
+  },
+  "config": {
+    "customUrl": {
+      "development": "./",
+      "production": "https://badmintongpl.com"
+    },
+    "githubUrl": "https://gitlab.com/buildx-custom-apps/project-playbaddy/badminton-super-league-website.git",
+    "deployToGithubIo": false,
+    "directory": {
+      "development": "tmp",
+      "production": "build",
+      "ghpages": ".publish",
+      "source": "src",
+      "data": "_data",
+      "component": "_component",
+      "layout": "_layout",
+      "asset": "_asset",
+      "image": "image",
+      "font": "font",
+      "templateCollection": [
+        "article",
+        "product"
+      ]
+    },
+    "render": {
+      "sourceFileChange": false,
+      "allPugFiles": false,
+      "url": {
+        "//": "this is recommended to avoid Linux/Windows capitalization issue",
+        "htmlExtensionOn": false,
+        "toLowercase": true
+      }
+    },
+    "entry": {
+      "cssExternal": "style**.{scss,sass}",
+      "cssEmbed": "embed**.{scss,sass}",
+      "cssModular": false,
+      "css": {
+        "embed": false,
+        "external": true
+      }
+    },
+    "autoLaunchBrowser": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/buildx-custom-apps/project-playbaddy/badminton-super-league-website.git"
+  },
+  "keywords": [
+    "pug",
+    "starter",
+    "jade",
+    "starter"
+  ],
+  "author": "Marian Zburlea",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/buildx-custom-apps/project-playbaddy/badminton-super-league-website/-/issues"
+  },
+  "homepage": "https://gitlab.com/buildx-custom-apps/project-playbaddy/badminton-super-league-website#readme",
+  "browserslist": [
+    "last 2 version",
+    "> 5%",
+    "safari 5",
+    "ios 6",
+    "android 4"
+  ],
+  "dependencies": {
+    "@babel/cli": "7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-transform-modules-commonjs": "7.5.0",
+    "@babel/preset-env": "7.5.5",
+    "@babel/preset-flow": "7.0.0",
+    "@babel/preset-stage-0": "7.0.0",
+    "@babel/preset-stage-1": "7.0.0",
+    "@babel/register": "^7.5.5",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/stream": "^2.0.0",
+    "autoprefixer": "9.6.2",
+    "babel": "^6.23.0",
+    "babel-eslint": "10.0.3",
+    "babel-loader": "8.0.6",
+    "browser-sync": "2.26.7",
+    "bs-eslint-message": "0.0.3",
+    "bulma": "^0.8.0",
+    "chalk": "2.4.2",
+    "constantinople": "^4.0.1",
+    "core-js": "^3.1.4",
+    "del": "5.1.0",
+    "eslint": "6.1.0",
+    "foldero": "0.1.1",
+    "gulp": "4.0.2",
+    "gulp-cached": "1.1.1",
+    "gulp-changed": "4.0.1",
+    "gulp-changed-in-place": "2.3.0",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-debug": "4.0.0",
+    "gulp-eslint": "6.0.0",
+    "gulp-gh-pages": "0.6.0-1",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "6.1.0",
+    "gulp-inline-source": "4.0.0",
+    "gulp-load-plugins": "2.0.1",
+    "gulp-noop": "^1.0.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "1.2.1",
+    "gulp-postcss": "8.0.0",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "1.4.0",
+    "gulp-sass-variables": "1.2.0",
+    "gulp-save": "^1.3.0",
+    "gulp-sitemap": "^8.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "imagemin-gifsicle": "6.0.1",
+    "imagemin-jpegtran": "6.0.0",
+    "imagemin-optipng": "7.1.0",
+    "imagemin-pngquant": "8.0.0",
+    "imagemin-svgo": "7.0.0",
+    "jest": "^24.8.0",
+    "js-yaml": "3.13.1",
+    "jstransformer-markdown-it": "2.1.0",
+    "merge-stream": "2.0.0",
+    "minimist": "1.2.0",
+    "pngquant-bin": "5.0.2",
+    "rollup": "^2.52.1",
+    "sass": "^1.34.1",
+    "standard-version": "^9.3.0",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}

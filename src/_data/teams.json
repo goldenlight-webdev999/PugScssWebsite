@@ -1,0 +1,82 @@
+[
+  {
+    "id": "tid-bengaluru-lions",
+    "name": "Bengaluru Lions",
+    "url": "team-bengaluru-lions.html",
+    "logo": "asset/image/teams/bengaluru-lions/logo.png",
+    "owner": "Not Available",
+    "venue": "Not Available",
+    "players": [],
+    "gallery": []
+  },
+  {
+    "id": "tid-kodava-tigers",
+    "name": "Kodava Tigers",
+    "url": "team-kodava-tigers.html",
+    "logo": "asset/image/teams/kodava-tigers/logo.png",
+    "owner": "Not Available",
+    "venue": "Not Available",
+    "players": [],
+    "gallery": []
+  },
+  {
+    "id": "tid-shimoga-eagles",
+    "name": "Shimoga Eagles",
+    "url": "team-shimoga-eagles.html",
+    "logo": "asset/image/teams/shimoga-eagles/logo.png",
+    "owner": "Not Available",
+    "venue": "Not Available",
+    "players": [],
+    "gallery": []
+  },
+  {
+    "id": "tid-belgaum-bucks",
+    "name": "Belgaum Bucks",
+    "url": "team-belgaum-bucks.html",
+    "logo": "asset/image/teams/belgaum-bucks/logo.png",
+    "owner": "Not Available",
+    "venue": "Not Available",
+    "players": [],
+    "gallery": []
+  },
+  {
+    "id": "tid-mysore-panthers",
+    "name": "Mysore Panthers",
+    "url": "team-mysore-panthers.html",
+    "logo": "asset/image/teams/mysore-panthers/logo.png",
+    "owner": "Not Available",
+    "venue": "Not Available",
+    "players": [],
+    "gallery": []
+  },
+  {
+    "id": "tid-mangalore-sharks",
+    "name": "Mangalore Sharks",
+    "url": "team-mangalore-sharks.html",
+    "logo": "asset/image/teams/mangalore-sharks/logo.png",
+    "owner": "Not Available",
+    "venue": "Not Available",
+    "players": [],
+    "gallery": []
+  },
+  {
+    "id": "tid-raichur-wolves",
+    "name": "Raichur Wolves",
+    "url": "team-raichur-wolves.html",
+    "logo": "asset/image/teams/raichur-wolves/logo.png",
+    "owner": "Not Available",
+    "venue": "Not Available",
+    "players": [],
+    "gallery": []
+  },
+  {
+    "id": "tid-bellary-bulls",
+    "name": "Bellary Bulls",
+    "url": "team-bellary-bulls.html",
+    "logo": "asset/image/teams/bellary-bulls/logo.png",
+    "owner": "Not Available",
+    "venue": "Not Available",
+    "players": [],
+    "gallery": []
+  }
+]

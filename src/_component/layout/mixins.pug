@@ -1,0 +1,42 @@
+//- Page Helpers
+mixin team(selectedTeam)
+  - var team = selectedTeam
+  include ../../_component/banner/team-banner/team-banner
+  +standardSectionPlayers("Squad", team.players, `${team.id}-players`)
+  +standardSectionGallery("Gallery", team.gallery, `${team.id}-gallery`)
+
+mixin standardPageHeader()
+  include ../../_component/nav/nav
+
+mixin standardPageFooter()
+  include ../../_component/footer/partners/partners
+  include ../../_component/footer/reach/reach
+
+//- Block Helpers
+mixin getIcon(iconName, wrapperClasses = "")
+  .cx-icon(class=`${iconName} ${wrapperClasses}`)
+    if (iconName == "cx-multimedia")
+      include ../../_asset/image/icons/multimedia-solid.svg
+    if (iconName == "cx-arrow-right")
+      include ../../_asset/image/icons/arrow-right-solid.svg
+    if (iconName == "cx-arrow-up")
+      include ../../_asset/image/icons/arrow-up-solid.svg
+    if (iconName == "cx-arrow-down")
+      include ../../_asset/image/icons/arrow-down-solid.svg
+    if (iconName == "cx-mail")
+      include ../../_asset/image/icons/envelope-solid.svg
+    if (iconName == "cx-phone")
+      include ../../_asset/image/icons/phone-solid.svg
+
+
+mixin standardSectionHeader(headText, wrapperClasses = "")
+  h2.text-uppercase.text-center(class=wrapperClasses)
+    span.title-underline #{headText}
+
+mixin standardSectionGallery(galleryHead="Gallery", galleryData = [], galleryId)
+  - var gallery = { heading: galleryHead, items: galleryData, id: galleryId }
+  include ../gallery/gallery
+
+mixin standardSectionPlayers(sectionHead="Squad", playersData = [], sectionId)
+  - var players = { heading: sectionHead, items: playersData, id: sectionId }
+  include ../players/players

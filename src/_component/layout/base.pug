@@ -1,0 +1,132 @@
+doctype html
+html(lang="en")
+  head
+    title= data.site.title
+    meta(charset=`${data.site.charset}`)
+    meta(name="Content-Type" content=`${data.site.contentType}`)
+    meta(name="viewport" content=`${data.site.viewport}`)
+    meta(name="description" content=`${data.site.description}`)
+    meta(name="application-name" content=`${data.site.applicationName}`)
+    meta(name="keywords" content=`${data.site.keywords}`)
+    meta(http-equiv="Content-Security-Policy" content="connect-src 'self' *.google-analytics.com; frame-src 'self' *.twitter.com https://embedsocial.com; object-src 'self';")
+
+    if data.site.fbAppId
+      meta(property="fb:app_id" content=`${data.site.fbAppId}`)
+    meta(property="og:url" content=`${data.site.ogUrl}`)
+    meta(property="og:type" content=`${data.site.ogType}`)
+    meta(property="og:title" content=`${data.site.ogTitle}`)
+    meta(property="og:description" content=`${data.site.ogDescription}`)
+    meta(property="og:image" content=`${data.site.ogImage}`)
+
+    link(rel="dns-prefetch" href="https://fonts.googleapis.com")
+    link(rel="dns-prefetch" href="https://cdnjs.cloudflare.com")
+
+    link(rel="icon" href="/favicon.ico" sizes="any")
+    link(rel="icon" type="image/png" href=`${data.site.logoShort}`)
+    link(rel="apple-touch-icon" href=`${data.site.logoShort}`)
+
+    //- this checks to see the the "embed" property is set to "true"
+    //- in the package.json file
+    if config.entry.css.embed
+      //- 3rd Party Base CSS
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous" referrerpolicy="no-referrer")
+      //- Slick CSS
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer")
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer")
+      //- Fancy Box CSS
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+        integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer")
+      //- Custom Site CSS
+      link(rel="stylesheet" href=`${embedPath}` embed)
+    style(type="text/css").
+      body.page-loading {
+        height: 100vh!important;
+        overflow-y: hidden!important;
+      }
+      body.page-loading * {
+        opacity: 0;
+        display: none;
+      }
+      .cx-loader {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: black;
+      }
+      .cx-loader::after {
+        content: " ";
+        display: block;
+        width: 300px;
+        height: 100px;
+        margin: 8px;
+        box-sizing: border-box;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%);
+        background: url(#{data.site.logo}) no-repeat center / contain;
+      }
+  body#home(class="page-loading cx-loader")
+    include mixins
+    .content
+      block nav-content
+      .wrapper
+        block main-content
+      block long-footer
+    //- The style.css is at the bottom so it doesn't
+    //- block the loading of assets
+    if config.entry.css.external
+      //- 3rd Party Base CSS
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous" referrerpolicy="no-referrer")
+      //- Slick CSS
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer")
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer")
+      //- Fancy Box CSS
+      link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+        integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer")
+      //- Custom Site CSS
+      link(rel="stylesheet", href=`${baseUrl}style.css`)
+
+    button#moveToTopBtn(aria-label="Move to Top")
+      div.arrow
+    
+    //- 3rd Party Base JS
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer")
+    script(async src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous" referrerpolicy="no-referrer")
+    //- Slick JS
+    script(async src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+      integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer")
+    //- Fancy Box JS
+    script(async src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"
+      integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA=="
+      crossorigin="anonymous" referrerpolicy="no-referrer")
+    //- Twitter Widget
+    script(async src='https://platform.twitter.com/widgets.js')
+    //- Custom Site JS
+    script(async src='bundle.js')
+    script(async src=`https://www.googletagmanager.com/gtag/js?id=${data.site.gtag}`)
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', "!{data.site.gtag}");

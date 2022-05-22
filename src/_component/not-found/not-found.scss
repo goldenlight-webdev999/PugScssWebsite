@@ -1,0 +1,47 @@
+.not-found-container {
+  background-color: $bg-primary;
+  padding: 60px 0;
+
+  .title-underline {
+    &::after {
+      left: 0;
+      width: 140px;
+    }
+  }
+
+  .not-found-title {
+    font-weight: 600;
+    font-size: 4rem;
+    color: $text-secondary;
+  }
+
+  .btn-back-to-home {
+    @include themeBtn($text-inverse, $text-secondary, $text-inverse);
+
+    &:hover {
+      .arrow_right_alt {
+        svg {
+          path {
+            stroke: $text-secondary;
+          }
+        }
+      }
+    }
+
+    .arrow_right_alt {
+      width: 8px;
+      height: 25px;
+      margin-left: 10px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+
+        path {
+          stroke-width: 5px;
+          stroke: $text-inverse;
+        }
+      }
+    }
+  }
+}
